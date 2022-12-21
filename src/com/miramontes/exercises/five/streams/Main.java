@@ -19,6 +19,12 @@ public class Main {
         // Reverse sorted first by age then by gender
         List<Person> sorted = people.stream().sorted(Comparator.comparing(Person::getAge).reversed().thenComparing(Person::getGender)).collect(Collectors.toList());
         sorted.forEach(System.out::println);
+
+        // All match
+        // Check if all the elements meet a certain condition.
+        System.out.println("\n\n***All match***");
+        boolean allOlderThanFive = people.stream().allMatch(p -> p.getAge() > 5);
+        System.out.println("allOlderThanFive = " + allOlderThanFive);
     }
 
     private static List<Person> getPeople() {
