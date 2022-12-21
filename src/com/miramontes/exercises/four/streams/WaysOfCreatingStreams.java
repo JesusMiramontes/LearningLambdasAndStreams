@@ -24,5 +24,12 @@ public class WaysOfCreatingStreams {
 
         // Method 3.
         Stream<String> lettersStream = Stream.of("a", "b", "c");
+
+        // Manipulating Streams
+        shoppingListStream
+                .sorted()
+                .map(item -> item.toUpperCase())
+                .filter(i -> i.startsWith("P"))
+                .forEach(item -> System.out.println(item));
     }
 }
