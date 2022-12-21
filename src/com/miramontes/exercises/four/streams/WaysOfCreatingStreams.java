@@ -28,8 +28,8 @@ public class WaysOfCreatingStreams {
         // Manipulating Streams
         shoppingListStream
                 .sorted()
-                .map(item -> item.toUpperCase())
+                .map(String::toUpperCase)
                 .filter(i -> i.startsWith("P"))
-                .forEach(item -> System.out.println(item));
+                .forEach(System.out::println);
     }
 }
