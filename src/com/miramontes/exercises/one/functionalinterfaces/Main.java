@@ -14,5 +14,9 @@ public class Main {
         };
 
         greeting2.sayHello();
+
+        // Lambda
+        Greeting greeting3 = () -> System.out.println("Hey.");
+        greeting3.sayHello();
     }
 }
