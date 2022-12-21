@@ -31,6 +31,12 @@ public class Main {
         System.out.println("\n\n***Any match***");
         boolean atLeastOneOlderThan100 = people.stream().anyMatch(p -> p.getAge() > 100);
         System.out.println("atLeastOneOlderThan100 = " + atLeastOneOlderThan100);
+
+        // None match
+        // Check that NO element meet a certain condition.
+        System.out.println("\n\n***None match***");
+        boolean noOneOlderThan130 = people.stream().noneMatch(p -> p.getAge() > 130);
+        System.out.println("noOneOlderThan130 = " + noOneOlderThan130);
     }
 
     private static List<Person> getPeople() {
