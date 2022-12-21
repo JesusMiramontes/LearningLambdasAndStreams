@@ -3,6 +3,7 @@ package com.miramontes.exercises.five.streams;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -37,6 +38,12 @@ public class Main {
         System.out.println("\n\n***None match***");
         boolean noOneOlderThan130 = people.stream().noneMatch(p -> p.getAge() > 130);
         System.out.println("noOneOlderThan130 = " + noOneOlderThan130);
+
+        // Max
+        // Check that NO element meet a certain condition.
+        System.out.println("\n\n***Max***");
+        Optional<Person> maxAge = people.stream().max(Comparator.comparing(Person::getAge));
+        maxAge.ifPresent(m -> System.out.println("maxAge = " + m));
     }
 
     private static List<Person> getPeople() {
