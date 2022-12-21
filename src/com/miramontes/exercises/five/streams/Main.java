@@ -44,6 +44,11 @@ public class Main {
         System.out.println("\n\n***Max***");
         Optional<Person> maxAge = people.stream().max(Comparator.comparing(Person::getAge));
         maxAge.ifPresent(m -> System.out.println("maxAge = " + m));
+
+        // Min
+        // Check min value.
+        System.out.println("\n\n***Min***");
+        people.stream().min(Comparator.comparing(Person::getAge)).ifPresent(System.out::println);
     }
 
     private static List<Person> getPeople() {
