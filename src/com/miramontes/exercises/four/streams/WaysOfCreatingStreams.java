@@ -3,6 +3,7 @@ package com.miramontes.exercises.four.streams;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class WaysOfCreatingStreams {
@@ -26,10 +27,11 @@ public class WaysOfCreatingStreams {
         Stream<String> lettersStream = Stream.of("a", "b", "c");
 
         // Manipulating Streams
-        shoppingListStream
+        List<String> sortedAndFilteredShoppingList = shoppingListStream
                 .sorted()
                 .map(String::toUpperCase)
                 .filter(i -> i.startsWith("P"))
-                .forEach(System.out::println);
+                .collect(Collectors.toList());
+        System.out.println(sortedAndFilteredShoppingList);
     }
 }
