@@ -40,7 +40,7 @@ public class Main {
         System.out.println("noOneOlderThan130 = " + noOneOlderThan130);
 
         // Max
-        // Check that NO element meet a certain condition.
+        // Check max value.
         System.out.println("\n\n***Max***");
         Optional<Person> maxAge = people.stream().max(Comparator.comparing(Person::getAge));
         maxAge.ifPresent(m -> System.out.println("maxAge = " + m));
